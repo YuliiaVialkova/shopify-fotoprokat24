@@ -1,0 +1,32 @@
+<div class="bg-blue-500 text-white p-8 text-center text-2xl font-bold">Tailwind 4 працює! 🎉</div>
+
+<section class="hero">
+  <div class="hero__container mx-auto px-4 max-w-[1412px]">
+    <div class="hero__content">
+      <p>photo and video equipment rental</p>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Hero section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero background image"
+    },
+    {
+      "type": "text",
+      "id": "hero_text",
+      "label": "Hero text",
+      "default": "photo and video equipment rental"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero section"
+    }
+  ]
+}
+{% endschema %}
