@@ -1,0 +1,28 @@
+{% comment %}
+  Simple responsive image component
+
+  Accepts:
+  - desktop_image: Image object
+  - mobile_image: Image object (optional)
+  - alt: String(optional)
+  - class: String(optional)
+{% endcomment %}
+
+<picture class="{{ class }}">
+  {% if mobile_image %}
+    <source
+      media="max-width: 768px"
+      srcset="{{mobile_image | image_url: width: 1200}}"
+    >
+  {% endif %}
+  {% if desktop_image %}
+    <img
+      src="{{desktop_image | image_url: width:2400}}"
+      width="{{desktop_image.width}}"
+      height="{{desktop_image.height}}"
+      alt="{{alt| default: desktop_image.alt | default:'Image'}}"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    >
+  {% endif %}
+</picture>
