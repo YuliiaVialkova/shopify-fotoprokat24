@@ -1,7 +1,12 @@
 <section class="hero">
   <div class="hero__container mx-auto px-4 max-w-[1412px]">
-    <div class="hero__content">
-      <p>photo and video equipment rental</p>
+    <div class="hero__content relative">
+      {% render 'viewport-images-mobile-desktop',
+        desktop_image: section.settings.desktop_image,
+        mobile_image: section.settings.mobile_image,
+        class: 'hero_banner'
+      %}
+      <h1 class="hero__text absolute bottom-0 left-0">photo and video equipment rental</h1>
     </div>
   </div>
 </section>
