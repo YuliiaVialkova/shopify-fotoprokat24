@@ -1,40 +1,45 @@
 <section class="hero">
-  <div class="hero__container mx-auto px-4 max-w-[1412px]">
-    <div class="hero__content relative">
-      {% render 'viewport-images-mobile-desktop',
-        desktop_image: section.settings.desktop_image,
-        mobile_image: section.settings.mobile_image,
-        class: 'hero_banner'
-      %}
-      <h1 class="hero__text absolute bottom-0 left-0">photo and video equipment rental</h1>
+  <div class="hero__content relative h-[23.4375rem] md:h-[34.375rem]">
+    {% render 'viewport-images-mobile-desktop'
+      ,
+ desktop_image: section.settings.desktop_image
+      ,
+ mobile_image: section.settings.mobile_image
+      ,
+ class: 'hero_banner block w-full h-full object-cover'
+    %}
+    <div class="hero__container absolute bottom-[20px] left-[20px] mx-auto z-20 max-w-[1110px] before:content-[''] before:w-[30px] before:h-[30px] before:absolute before:bottom-[-15px] before:left-[-15px] before:-z-10 before:rounded-full before:bg-[linear-gradient(180deg,#8EE902_0%,#4F9C2C_100%)]">
+      <h1 class="hero__text text-[1rem] md:text-[1.875rem] px-[0.625rem] leading-[2.625] md:leading-[3.81] bg-white shadow-[0_2px_6px_rgba(0,0,0,0.15)] w-[200px] font-bold md:uppercase ">
+        <strong class="text-black md:text-transparent md:bg-clip-text md:bg-[linear-gradient(270deg,#8EE901_0%,#4F9C2C_99.06%)]">Оренда</strong>
+        фото і відео обладнання</h1>
     </div>
   </div>
 </section>
+
+
 {% schema %}
-{
-  "name": "Hero section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "desktop_image",
-      "label": "Hero desktop banner"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "Hero mobile banner"
-    },
-    {
-      "type": "text",
-      "id": "hero_text",
-      "label": "Hero text",
-      "default": "photo and video equipment rental"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero section"
-    }
-  ]
-}
+  {
+    "name": "Hero section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Hero desktop banner"
+      }, {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Hero mobile banner"
+      }, {
+        "type": "text",
+        "id": "hero_text",
+        "label": "Hero text",
+        "default": "Оренда фото і відео обладнання"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero section"
+      }
+    ]
+  }
 {% endschema %}
