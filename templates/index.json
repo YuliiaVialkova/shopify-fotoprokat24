@@ -12,9 +12,9 @@
     "main": {
       "type": "hero",
       "settings": {
-        "desktop_image": "shopify://shop_images/banner.jpg",
-        "mobile_image": "shopify://shop_images/3f523083ac615c28c424ed9fc785aa4a47d3d031.jpg",
-        "hero_text": "photo and video equipment rental"
+        "desktop_image": "shopify://shop_images/desktop-banner_cce068be-9f96-4725-86fb-425f28cf56f2.jpg",
+        "mobile_image": "shopify://shop_images/mobile-banner_b42cf90f-8a1e-45b0-9303-8e13ec5ef3c5.jpg",
+        "hero_text": "Оренда фото і відео обладнання"
       }
     }
   },
