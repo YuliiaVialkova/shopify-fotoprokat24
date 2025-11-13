@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build:css": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/style.css --content './**/*.{liquid,json,html,ts,js}'",
-    "watch:css": "npx chokidar './**/*.{liquid,json,html,css,js}' -c \"npm run build:css\"",
+    "watch:css": "npx chokidar \"./**/*.{liquid,json,html,css,js}\" -c \"npm run build:css\" --polling",
     "dev": "npx concurrently \"npm run watch:css\" \"shopify theme dev\""
   },
   "devDependencies": {
