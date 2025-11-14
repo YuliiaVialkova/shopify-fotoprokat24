@@ -1,0 +1,43 @@
+<section class="features">
+  <div class="features__container">
+    <div class="features__content">
+
+      <ul class="features__list">
+
+        <li class="features__item"></li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Features",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Feature icon"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Feature title"
+          }
+        ]
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "Features",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
