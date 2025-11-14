@@ -16,9 +16,59 @@
         "mobile_image": "shopify://shop_images/mobile-banner_b42cf90f-8a1e-45b0-9303-8e13ec5ef3c5.jpg",
         "hero_text": "Оренда фото і відео обладнання"
       }
+    },
+    "features_KyEhgM": {
+      "type": "features",
+      "blocks": {
+        "feature_98FnPx": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/list.svg",
+            "title": "Найбільший вибір техники"
+          }
+        },
+        "feature_cytw9H": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/time.svg",
+            "title": "Швидке оформлення замовлення"
+          }
+        },
+        "feature_a8RAUX": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/placeholder.svg",
+            "title": "Можна забрати замовлення в пункті видачі"
+          }
+        },
+        "feature_XLWphT": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/product.svg",
+            "title": "Доставка в будь-яку точку України"
+          }
+        },
+        "feature_wEVwB4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/commerce-and-shopping.svg",
+            "title": "Оплата картою та готівкою"
+          }
+        }
+      },
+      "block_order": [
+        "feature_98FnPx",
+        "feature_cytw9H",
+        "feature_a8RAUX",
+        "feature_XLWphT",
+        "feature_wEVwB4"
+      ],
+      "name": "Features",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "features_KyEhgM"
   ]
 }
