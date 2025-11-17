@@ -65,10 +65,18 @@
       ],
       "name": "Features",
       "settings": {}
+    },
+    "popular_products_zcpEVM": {
+      "type": "popular-products",
+      "name": "Popular products",
+      "settings": {
+        "products": []
+      }
     }
   },
   "order": [
     "main",
-    "features_KyEhgM"
+    "features_KyEhgM",
+    "popular_products_zcpEVM"
   ]
 }
