@@ -1,5 +1,25 @@
 <div class="product-card">
-  {% for product in products %}
-
+  <a href="{{product.url}}">
+    {% if product.featured_media %}
+      <img
+        src="{{product.featured.media |  image_url:width:190}}"
+        alt=""
+        width="190"
+        height="134">
+    {% endif %}
+    <h3>{{ product.title }}</h3>
+  </a>
+  {% for variant in product.variants %}
+    <div class="product-card__variants">
+      <p>{{ variant.id }}</p>
+      <p>{{ variant.title }}</p>
+    </div>
   {% endfor %}
+  <p>{{ product.vendor }}</p>
+  <div class="product-card__footer">
+    <a href="{{product.url}}">Детальніше</a>
+    <form method="post" action="{{routes_card_url}}">
+      <button type="submit">В кошик</button>
+    </form>
+  </div>
 </div>
