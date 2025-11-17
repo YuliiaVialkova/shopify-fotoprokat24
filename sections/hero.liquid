@@ -3,7 +3,7 @@
 {% assign rest_words = words | slice: 1, words.size | join: ' ' %}
 
 <section class="hero">
-  <div class="hero__body  h-93.75 md:h-137.5">
+  <div class="hero__body relative h-93.75 md:h-137.5">
     {% render 'viewport-images-mobile-desktop'
       ,
  desktop_image: section.settings.desktop_image
@@ -12,16 +12,16 @@
       ,
  class: 'hero_banner block w-full h-full object-cover'
     %}
-    <div class="hero__container min-h-5 relative max-w-[1110px] mx-auto ">
-      <div class="hero__content absolute bottom-5 md:bottom-12 left-5 md:left-12 z-20  before:content-[''] before:w-[30px] md:before:w-[60px] before:h-[30px] md:before:h-[60px] before:absolute before:bottom-[-15px] md:before:bottom-[-30px] before:left-[-15px] md:before:left-[-30px] before:-z-10 before:rounded-full before:bg-[linear-gradient(180deg,#8EE902_0%,#4F9C2C_100%)]">
-        <h1 class="hero__text text-[1rem] font-bold md:text-[1.875rem] px-2.5 leading-[2.625] md:leading-[2.03] w-[200px] md:w-[260px] bg-[white] shadow-[0_2px_6px_rgba(0,0,0,0.15)] md:uppercase ">
+    <div class="hero__content min-h-5 absolute bottom-0 left-0 right-0">
+      <div class="hero__container relative z-10 max-w-[1150px]  mx-auto md:my-[50px] px-5 py-5 md:px-[30px] before:content-[''] before:w-[30px] md:before:w-[60px] before:h-[30px] md:before:h-[60px] before:absolute before:bottom-[5px] md:before:bottom-[-30px] before:left-[5px] md:before:left-0 before:rounded-full before:-z-10 before:bg-[linear-gradient(180deg,#8EE902_0%,#4F9C2C_100%)] ">
+        <h1 class="hero__text text-[1rem] relative font-bold md:text-[1.875rem] px-2.5 leading-[2.625] md:leading-[2.03] w-[200px] md:w-[260px] z-20  bg-white shadow-[0_2px_6px_rgba(0,0,0,0.15)] md:uppercase ">
           <strong class="text-black font-bold md:text-transparent md:bg-clip-text md:bg-[linear-gradient(270deg,#8EE901_0%,#4F9C2C_99.06%)]">{{ first_word }}</strong>
           {{ rest_words }}</h1>
       </div>
     </div>
   </div>
 </section>
-
+{% comment %}px-5 py-5 md:px-[30px] md:py-[50px] relative bottom-6 md:bottom-12 left-5 md:left-0 z-20  before:content-[''] before:w-[30px] md:before:w-[60px] before:h-[30px] md:before:h-[60px] before:absolute before:bottom-[-15px] md:before:bottom-[-30px] before:left-[-15px] md:before:left-[-30px] before:-z-10 before:rounded-full before:bg-[linear-gradient(180deg,#8EE902_0%,#4F9C2C_100%)] {% endcomment %}
 
 {% schema %}
   {
