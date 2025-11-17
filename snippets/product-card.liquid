@@ -12,7 +12,7 @@
   {% if product.variants.size > 1 %}
     {% for variant in product.variants %}
       <div class="product-card__variants">
-        <p>{{ variant.price | money }}</p>
+        <p>{{ variant.price | money_without_trailing_zeros }}</p>
         <p>{{ variant.title }}</p>
       </div>
     {% endfor %}
