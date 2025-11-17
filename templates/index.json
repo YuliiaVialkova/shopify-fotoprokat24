@@ -70,7 +70,11 @@
       "type": "popular-products",
       "name": "Popular products",
       "settings": {
-        "products": []
+        "products": [
+          "powershot-sx620-ws-copy",
+          "powershot-sx620-hs",
+          "powershot-sx620-hs-copy"
+        ]
       }
     }
   },

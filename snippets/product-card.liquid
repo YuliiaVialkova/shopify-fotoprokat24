@@ -2,27 +2,29 @@
   <a href="{{product.url}}">
     {% if product.featured_media %}
       <img
-        src="{{product.featured.media | image_url: width: 190}}"
+        src="{{product.featured_media | image_url: width: 190}}"
         alt=""
         width="190"
         height="134">
     {% endif %}
     <h3>{{ product.title }}</h3>
   </a>
-  {% for variant in product.variants %}
-    <div class="product-card__variants">
-      <p>{{ variant.id }}</p>
-      <p>{{ variant.title }}</p>
-    </div>
-  {% endfor %}
+  {% if product.variants.size > 1 %}
+    {% for variant in product.variants %}
+      <div class="product-card__variants">
+        <p>{{ variant.price | money }}</p>
+        <p>{{ variant.title }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
   <p>{{ product.vendor }}</p>
   <div class="product-card__footer">
     <a href="{{product.url}}">Детальніше</a>
-    <form method="post" action="{{routes_card_url}}">
+    <form method="post" action="{{routes.cart_add_url}}">
       <input
         type="hidden"
         name="id"
-        product.selected_or_first_available_variant.id>
+        value={{product.selected_or_first_available_variant.id}}>
       <button type="submit">В кошик</button>
     </form>
   </div>
