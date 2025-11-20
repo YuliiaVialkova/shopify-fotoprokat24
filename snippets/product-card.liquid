@@ -1,31 +1,54 @@
 <div class="product-card">
-  <a href="{{product.url}}">
-    {% if product.featured_media %}
-      <img
-        src="{{product.featured_media | image_url: width: 190}}"
-        alt=""
-        width="190"
-        height="134">
-    {% endif %}
-    <h3>{{ product.title }}</h3>
-  </a>
-  {% if product.variants.size > 1 %}
-    {% for variant in product.variants %}
-      <div class="product-card__variants">
-        <p>{{ variant.price | money_without_trailing_zeros }}</p>
-        <p>{{ variant.title }}</p>
+  <div class="product-card__content relative w-[333px] border border-solid border-[#EFEFEF] text-center">
+    <div class="product-card__aside flex flex-col flex-nowrap gap-3 absolute top-5 right-5">
+      <button >
+        <svg class="w-4.75 h-4.75 text-black cursor-pointer hover:text-[#60B021]">
+          <use href="#icon-compare"></use>
+        </svg>
+      </button>
+      <button>
+        <svg class="w-6 h-6 text-black cursor-pointer hover:text-[#60B021]">
+          <use href="#icon-wishlist"></use>
+        </svg>
+      </button>
+    </div>
+    <a href="{{ product.url }}" class="product-card__link flex flex-col justify-center items-center">
+      {% if product.featured_media %}
+        <img
+          class="my-8 text-center"
+          src="{{ product.featured_media | image_url: width: 200 }}"
+          alt=""
+          width="200"
+          height="140">
+      {% endif %}
+      <h3 class="product-card__title font-bold mb-3 text-[1rem] leading-[26px]">{{ product.title }}</h3>
+    </a>
+    <p class="product-card__vendor font-normal mb-3 text-[0.875rem] leading-[26px]">{{ product.vendor }}</p>
+    {% if product.variants.size > 1 %}
+      <div class="product-card__variants data-variants-container flex flex-nowrap items-center">
+        {% for variant in product.variants %}
+          <button type="button" class="product-card__variant flex-1 py-4 px-2 border-t border-b  border-r last:border-r-0 border-[#EFEFEF]">
+            <p class="product-card__price font-bold text-[0.875rem] leading-[1.43]">{{ variant.price | money_without_trailing_zeros }}</p>
+            <p class="product-card__variant-title font-normal text-[0.875rem] leading-[1.43]">{{ variant.title }}</p>
+          </button>
+        {% endfor %}
       </div>
-    {% endfor %}
-  {% endif %}
-  <p>{{ product.vendor }}</p>
-  <div class="product-card__footer">
-    <a href="{{product.url}}">Детальніше</a>
-    <form method="post" action="{{routes.cart_add_url}}">
-      <input
-        type="hidden"
-        name="id"
-        value={{product.selected_or_first_available_variant.id}}>
-      <button type="submit">В кошик</button>
-    </form>
+    {% endif %}
+
+    <div class="product-card__footer py-5 flex justify-around">
+      <a href="{{ product.url }}" class="flex items-center justify-center font-bold text-[0.875rem] py-3 px-6 leading-[1.21] shadow-[0_2px_6px_0_#00000026] rounded-[100px] min-w-[135px] bg-white hover:bg-[#75758A] hover:text-white active:scale-95 transition-all duration-300 ease-out">Детальніше</a>
+      <form method="post" action="{{ routes.cart_add_url }}">
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}" />
+        <button type="submit" class="flex items-center justify-center gap-2 font-bold text-white py-3 px-6 leading-none rounded-[100px] min-w-[135px] bg-[linear-gradient(180deg,#8EE902_0%,#4F9C2C_100%)] hover:bg-[linear-gradient(180deg,#7BC900_0%,#3F8A25_100%)] cursor-pointer">
+          <svg class="w-4 h-4 text-white">
+            <use href="#icon-cart"></use>
+          </svg>
+          В кошик
+        </button>
+      </form>
+    </div>
   </div>
 </div>
