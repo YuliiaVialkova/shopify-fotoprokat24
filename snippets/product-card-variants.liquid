@@ -1,0 +1,43 @@
+{% if product.variants.size > 1 %}
+  <div class="product-card-variants data-variants-container flex flex-nowrap items-center">
+    {% for variant in product.variants %}
+      <button
+        type="button"
+        class="product-card-variants__option flex-1 py-4 px-2 border-t border-b  border-r last:border-r-0 border-[#EFEFEF]"
+        data-variant-id="{{ variant.id }}"
+        data-variant-price="{{ variant.price | money_without_trailing_zeros }}">
+        <p class="product-card-variants__price font-bold text-[0.875rem] leading-[1.43]">{{ variant.price | money_without_trailing_zeros }}</p>
+        <p class="product-card-variants__option-title font-normal text-[0.875rem] leading-[1.43]">{{ variant.title }}</p>
+      </button>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('[data-variants-container]').forEach((container)=> {
+            const buttons = container.querySelectorAll('product-card-variants__option');
+  
+            buttons.forEach(btn => {
+                btn.addEventListener('click', ()=> {
+                    // remove active classes
+                    buttons.forEach(b => {
+                        b.classList.remove(
+                            'bg-green',
+                            'text-white'
+                        )
+                    });
+                    btn.classList.add(
+                        'bg-green',
+                            'text-white'
+                    );
+                    //update hidden input in "add to cart" form
+            const form = container.closest('.product-card').querySelector('form');
+            const input = form.querySelector('input[name="id"]');
+            input.value = btn.dataset.variantId;
+                });
+            });
+            
+        });
+    });
+</script>

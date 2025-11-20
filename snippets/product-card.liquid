@@ -24,16 +24,9 @@
       <h3 class="product-card__title font-bold mb-3 text-[1rem] leading-[26px]">{{ product.title }}</h3>
     </a>
     <p class="product-card__vendor font-normal mb-3 text-[0.875rem] leading-[26px]">{{ product.vendor }}</p>
-    {% if product.variants.size > 1 %}
-      <div class="product-card__variants data-variants-container flex flex-nowrap items-center">
-        {% for variant in product.variants %}
-          <button type="button" class="product-card__variant flex-1 py-4 px-2 border-t border-b  border-r last:border-r-0 border-[#EFEFEF]">
-            <p class="product-card__price font-bold text-[0.875rem] leading-[1.43]">{{ variant.price | money_without_trailing_zeros }}</p>
-            <p class="product-card__variant-title font-normal text-[0.875rem] leading-[1.43]">{{ variant.title }}</p>
-          </button>
-        {% endfor %}
-      </div>
-    {% endif %}
+    <div class="product-card__variants">
+      {% render 'product-card-variants', product: product %}
+    </div>
 
     <div class="product-card__footer py-5 flex justify-around">
       <a href="{{ product.url }}" class="flex items-center justify-center font-bold text-[0.875rem] py-3 px-6 leading-[1.21] shadow-[0_2px_6px_0_#00000026] rounded-[100px] min-w-[135px] bg-white hover:bg-[#75758A] hover:text-white active:scale-95 transition-all duration-300 ease-out">Детальніше</a>
