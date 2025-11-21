@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
-@theme {
-  --main-bg: #ffffff;
+@layer theme {
+  :root {
+    --color-main-text: #ffffff;
+    --color-main-bg: #ffffff;
+    --color-main-btn-bg: #ffffff;
+  }
+}
+
+@layer utilities {
+  .bg-main {
+    background-color: var(--color-main-bg);
+  }
+  .text-main {
+    color: var(--color-main-text);
+  }
+  .bg-btn-main {
+    background-color: var(--color-main-btn-bg);
+  }
 }
