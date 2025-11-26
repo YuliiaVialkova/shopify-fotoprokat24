@@ -1,17 +1,6 @@
 <div class="product-card">
   <div class="relative w-[333px] border border-solid border-[#EFEFEF] text-center">
-    <div class="product-card__aside flex flex-col flex-nowrap gap-3 absolute top-5 right-5">
-      <button >
-        <svg class="w-4.75 h-4.75 text-black cursor-pointer hover:text-[#60B021]">
-          <use href="#icon-compare"></use>
-        </svg>
-      </button>
-      <button>
-        <svg class="w-6 h-6 text-black cursor-pointer hover:text-[#60B021]">
-          <use href="#icon-wishlist"></use>
-        </svg>
-      </button>
-    </div>
+    {% render 'product-card-aside', product: product %}
     <a href="{{ product.url }}" class="product-card__link flex flex-col justify-center items-center">
       {% if product.featured_media %}
         <img
