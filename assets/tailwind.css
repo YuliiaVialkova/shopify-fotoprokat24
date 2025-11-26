@@ -32,7 +32,7 @@
     /* container */
     --container-middle: 1110px;
     --container-middle-width: calc(
-      var(--container-middle)+ (var(--padding-inline) * 2)
+      var(--container-middle) + (var(--padding-inline) * 2)
     );
   }
 }
@@ -40,6 +40,9 @@
 @layer utilities {
   .bg-main {
     background-color: var(--color-main-bg);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary-bg);
   }
   .text-main {
     color: var(--color-main-text);
