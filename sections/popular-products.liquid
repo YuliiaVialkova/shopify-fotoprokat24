@@ -1,6 +1,6 @@
 <section class="popular-products">
-  <div class="popular-products__container">
-    <h1>Популярні товари</h1>
+  <div class="container-middle">
+    <h2>Популярні товари</h2>
     {% for product in section.settings.products %}
       {% render 'product-card'
         , product: product %}
