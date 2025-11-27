@@ -20,8 +20,12 @@
 
     /* buttons background-color */
     --color-main-btn-bg: #ffffff;
-    --color-secondary-btn-bg: var(--color-accent-bg);
-    --color-additinal-btn-bg: #4f9c2c; /*dark-green*/
+    --color-btn-bg-main-hover: var(--color-secondary);
+    --color-btn-bg-secondary-hover: #4f9c2c; /*dark-green*/
+
+    /* border */
+    --color-main-border: #efefef;
+    --color-accent-border: #60b021; /*light-green*/
 
     /* shadow */
     --shadow-box-title: 0px 2px 6px 0px #00000026;
@@ -53,8 +57,17 @@
   .bg-btn-secondary {
     background: var(--color-secondary-btn-bg);
   }
-  .bg-accent {
-    background: var(--color-accent-bg);
+  .hover-btn-secondary {
+    background: var(--color-secondary-btn-bg);
+    background-image: linear-gradient(180deg, #8ee902 0%, #4f9c2c 100%);
+  }
+  .border-main {
+    border: 1px solid var(--color-main-border);
+    outline: 0px solid transparent;
+    transition: outline 0.25s ease-out;
+  }
+  .border-hover:hover {
+    outline: 2px solid var(--color-accent-border);
   }
   .shadow-title {
     box-shadow: var(--shadow-box-title);

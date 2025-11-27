@@ -6,8 +6,8 @@
         class="product-card-variants__option flex-1 py-4 px-2 border-t border-b  border-r last:border-r-0 border-[#EFEFEF]"
         data-variant-id="{{ variant.id }}"
         data-variant-price="{{ variant.price | money_without_trailing_zeros }}">
-        <p class="product-card-variants__price font-bold text-[0.875rem] leading-[1.43]">{{ variant.price | money_without_trailing_zeros }}</p>
-        <p class="product-card-variants__option-title font-normal text-[0.875rem] leading-[1.43]">{{ variant.title }}</p>
+        <p class="font-bold text-[0.875rem] leading-[1.43]">{{ variant.price | money_without_trailing_zeros }}</p>
+        <p class="font-normal text-[0.875rem] leading-[1.43]">{{ variant.title }}</p>
       </button>
     {% endfor %}
   </div>
