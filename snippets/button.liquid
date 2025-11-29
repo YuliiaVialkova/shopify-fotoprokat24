@@ -1,12 +1,12 @@
 {% comment %} 
-            universal button
-            
-            parameters:
-            -text:string(required);
-            -type:"button" | "submit";
-            -url: string(optional);
-            -variant: "accent" | "usual" | "accent-blur";
-            -icon: id of svg <use href="#id"> 
+                  universal button
+                  
+                  parameters:
+                  -text:string(required);
+                  -type:"button" | "submit";
+                  -url: string(optional);
+                  -variant: "accent" | "usual" | "accent-blur";
+                  -icon: id of svg <use href="#id"> 
 {% endcomment %}
 {% assign btn_type = type | default: "submit" %}
 {% assign btn_variant = variant | default: "usual" %}
@@ -22,11 +22,8 @@
   {% assign variant_classes = "" %}
 {% endif %}
 
-{% assign base_classes = "flex items-center justify-center py-12 px-5
-                    gap-2.5 font-bold leading-4
-                    rounded-[100px]
-                    cursor-pointer
-                    transition-all duration-300 ease-out" %}
+{% assign base_classes = "flex items-center justify-center py-3 px-5 gap-2.5 font-bold leading-4
+    rounded-[100px] cursor-pointer transition-all duration-300 ease-in" %}
 
 
 {% assign final_classes = base_classes | append: ' ' | append: variant_classes | append: ' ' | append: classes %}
