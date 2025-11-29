@@ -47,7 +47,10 @@
 
     /* shadow */
     --shadow-box-title: 0px 2px 6px 0px #00000026;
+
     --shadow-accent-btn: 0px 2px 6px 0px #00000033;
+    --shadow-usualt-btn: 0px 2px 6px 0px #00000026;
+
     --shadow-accent-variants: inset 0 0 0 2px var(--color-accent-border);
 
     /* padding */

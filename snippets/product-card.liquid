@@ -1,6 +1,7 @@
 <div class="product-card w-[333px] ">
   <div class="relative border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
-    {% render 'product-card-aside', product: product %}
+    {% render 'product-card-aside'
+      , product: product %}
     <a href="{{ product.url }}" class="product-card__link flex flex-col justify-center items-center">
       {% if product.featured_media %}
         <img
@@ -13,25 +14,36 @@
       <h3 class="font-bold mb-3 text-[1rem] leading-[26px] hover:text-(--color-accent-text) transition ease-in duration-300">{{ product.title }}</h3>
     </a>
     <p class="font-normal mb-3 text-3.5 leading-[26px]">{{ product.vendor }}</p>
-      {% render 'product-card-variants', product: product %}
-    <div class="py-5 flex justify-around">
-      {% render 'button',
-      text: "Детальніше",
-      url: product.url,
-      variant: "usual",
-      classes: "min-w-[135px]"
-       %}
+    {% render 'product-card-variants'
+      , product: product %}
+    <div class="py-5 flex gap-5 justify-center">
+      {% render 'button'
+        ,
+ text: "Детальніше"
+        ,
+ url: product.url
+        ,
+ variant: "usual"
+        ,
+ classes: "min-w-[135px]"
+      %}
       <form method="post" action="{{ routes.cart_add_url }}">
         <input
           type="hidden"
           name="id"
           value="{{ product.selected_or_first_available_variant.id }}" />
-        <button type="submit" class="flex items-center justify-center gap-2 font-bold text-white py-3 px-6 leading-none rounded-[100px] min-w-[135px] bg-btn-secondary hover:bg-[linear-gradient(180deg,#7BC900_0%,#3F8A25_100%)] cursor-pointer">
-          <svg class="w-4 h-4 text-white">
-            <use href="#icon-cart"></use>
-          </svg>
-          В кошик
-        </button>
+        {% render 'button'
+          ,
+ text: "В кошик"
+          ,
+ type: submit
+          ,
+ variant: "accent"
+          ,
+ icon: "icon-cart"
+          ,
+ classes: "min-w-[135px]"
+        %}
       </form>
     </div>
   </div>
