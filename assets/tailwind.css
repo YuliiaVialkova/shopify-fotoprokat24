@@ -2,33 +2,53 @@
 
 @layer theme {
   :root {
+    --color-light: #ffffff;
+    --color-dark: #000000;
+
+    --color-add-light: #efefef;
+
+    --color-sub-light: #f5f5f5;
+    --color-sub-dark: #75758a;
+
+    --color-sup-accent: #8ee902;
+    --color-sub-accent: #4f9c2c;
+
+    --color-light-accent: #60b021;
+    --color-dark-accent: #4f9c2c;
+
     /* text-color */
-    --color-main-text: #ffffff;
-    --color-secondary-text: #75758a;
-    --color-accent-text: #60b021; /*light-green*/
+    --color-main-text: var(--color-light);
+    --color-add-text: var(--color-sub-dark);
+    --color-accent-text: var(--color-light-accent);
 
     /* buttons text-color */
-    --color-main-btn: #000000;
-    --color-secondary-btn: #ffffff;
+    --color-text-usual-btn: var(--color-dark);
+    --color-text-accent-btn: var(--color-light);
 
-    /* background-color */
-    --color-main-bg: #ffffff;
-    --color-secondary-bg: #f5f5f5; /*light-grey*/
-    --color-additinal-bg: #4f9c2c; /*dark-green*/
-    --color-accent-bg-from: #8ee902;
-    --color-accent-bg-to: #4f9c2c;
+    /* background-color buttons */
+    --color-bg-usual-btn: var(--color-light);
+    --color-bg-accent-btn-from: var(--color-sup-accent);
+    --color-bg-accent-btn-to: var(--color-sub-accent);
 
-    /* buttons background-color */
-    --color-main-btn-bg: #ffffff;
-    --color-btn-bg-main-hover: var(--color-secondary);
-    --color-btn-bg-secondary-hover: #4f9c2c; /*dark-green*/
+    /* hover buttons */
+    --color-bg-usual-btn-hover: var(--color-light);
+    --color-bg-accent-btn-hover: var(--color-sub-accent);
+    --color-text-usual-btn-hover: var(--color-light);
+
+    /*  background-color */
+    --color-bg-main: var(--color-light);
+    --color-bg-add: var(--color-sub-light);
+    --color-bg-accent-from: var(--color-sup-accent);
+    --color-bg-accent-to: var(--color-sub-accent);
 
     /* border */
-    --color-main-border: #efefef;
-    --color-accent-border: #60b021; /*light-green*/
+    --color-main-border: var(--color-add-light);
+    --color-accent-border: var(--color-light-accent);
 
     /* shadow */
     --shadow-box-title: 0px 2px 6px 0px #00000026;
+    --shadow-accent-btn: 0px 2px 6px 0px #00000033;
+    --shadow-accent-variants: inset 0 0 0 2px var(--color-accent-border);
 
     /* padding */
     --padding-inline: 20px;
@@ -42,7 +62,7 @@
 }
 
 @layer utilities {
-  .bg-main {
+  /* .bg-main {
     background-color: var(--color-main-bg);
   }
   .bg-secondary {
@@ -51,11 +71,14 @@
   .text-main {
     color: var(--color-main-text);
   }
-  .bg-btn-main {
-    background-color: var(--color-main-btn-bg);
+  .bg-btn-primary {
+    background-color: var(--color-primary-btn-bg);
   }
   .bg-btn-secondary {
     background: var(--color-secondary-btn-bg);
+  }
+  .text-btn-primary {
+    color: var(--color-primary-btn);
   }
   .hover-btn-secondary {
     background: var(--color-secondary-btn-bg);
@@ -71,7 +94,7 @@
   }
   .shadow-title {
     box-shadow: var(--shadow-box-title);
-  }
+  } */
   .container-middle {
     max-width: var(--container-middle-width);
     margin: 0 auto;
@@ -85,5 +108,11 @@
     @media (width >= 48rem) {
       padding-inline: 30px;
     }
+  }
+  .font-section-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.11;
+    text-align: center;
   }
 }

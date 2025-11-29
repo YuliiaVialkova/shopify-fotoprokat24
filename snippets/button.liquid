@@ -1,0 +1,53 @@
+{% comment %} 
+            universal button
+            
+            parameters:
+            -text:string(required);
+            -type:"button" | "submit";
+            -url: string(optional);
+            -variant: "accent" | "usual" | "accent-blur";
+            -icon: id of svg <use href="#id"> 
+{% endcomment %}
+{% assign btn_type = type | default: "submit" %}
+{% assign btn_variant = variant | default: "usual" %}
+
+
+{% if btn_variant == "usual" %}
+  {% assign variant_classes = "text-(--color-text-usual-btn) hover:text-(--color-text-usual-btn-hover) bg-(--color-bg-usual-btn) hover:bg-(--color-sub-dark)" %}
+{% elsif btn_variant == "accent" %}
+  {% assign variant_classes = "text-(--color-text-accent-btn) bg-linear-to-b from-(--color-bg-accent-btn-from) to-(--color-bg-accent-btn-to) hover:bg-linear-to-b hover:from-(--color-bg-accent-btn-hover) hover:to-(--color-bg-accent-btn-hover)" %}
+{% elsif btn_variant == "accent-blur" %}
+  {% assign variant_classes = "text-(--color-text-accent-btn) bg-linear-to-b from-(--color-bg-accent-btn-hover) to-(--color-bg-accent-btn-hover) blur-2.5" %}
+{% else %}
+  {% assign variant_classes = "" %}
+{% endif %}
+
+{% assign base_classes = "flex items-center justify-center py-12 px-5
+                    gap-2.5 font-bold leading-4
+                    rounded-[100px]
+                    cursor-pointer
+                    transition-all duration-300 ease-out" %}
+
+
+{% assign final_classes = base_classes | append: ' ' | append: variant_classes | append: ' ' | append: classes %}
+
+{% capture icon_html %}
+  {% if icon %}
+    <svg class="size-4 text-inherit">
+      <use href="#{{ icon }}"></use>
+    </svg>
+
+  {% endif %}
+{% endcapture %}
+
+{% if url %}
+  <a href="{{ url }}" class="{{ final_classes }}">
+    {{ icon_html }}
+    {{ text }}
+  </a>
+{% else %}
+  <button type="{{ btn_type }}" class="{{ final_classes }}">
+    {{ icon_html }}
+    {{ text }}
+  </button>
+{% endif %}

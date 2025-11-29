@@ -1,9 +1,9 @@
-<section class="features mb-5 md:bg-gray-100">
+<section class="features mb-12 md:mb-14 md:bg-(--color-secondary-bg)">
   <div class="container-middle py-5 md:py-0">
     <h2 class="sr-only">Features</h2>
-    <ul class="flex flex-row justify-start md:justify-between flex-wrap gap-5 md:gap-0 md:pt-5">
+    <ul class="flex flex-row justify-start md:justify-between flex-wrap gap-5 md:gap-2.5 md:pt-5">
       {% for block in section.blocks %}
-        <li class=" bg-secondary flex flex-col md:flex-row grow md:shrink-0 justify-start items-center md:items-start md:gap-5 basis-[157px] md:basis-48 px-2.5 py-[30px]">
+        <li class="bg-(--color-bg-add) flex flex-col md:flex-row grow md:shrink-0 justify-start items-center md:items-start md:gap-5 basis-[157px] md:basis-48 px-2.5 py-[30px]">
           {% if block.settings.icon != blank %}
             <img
               src="{{ block.settings.icon | image_url: width:33 }}"

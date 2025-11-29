@@ -1,5 +1,5 @@
 <div class="product-card w-[333px] ">
-  <div class="relative border-main border-hover text-center">
+  <div class="relative border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
     {% render 'product-card-aside', product: product %}
     <a href="{{ product.url }}" class="product-card__link flex flex-col justify-center items-center">
       {% if product.featured_media %}
@@ -10,12 +10,17 @@
           width="200"
           height="140">
       {% endif %}
-      <h3 class="font-bold mb-3 text-[1rem] leading-[26px]">{{ product.title }}</h3>
+      <h3 class="font-bold mb-3 text-[1rem] leading-[26px] hover:text-(--color-accent-text) transition ease-in duration-300">{{ product.title }}</h3>
     </a>
-    <p class="font-normal mb-3 text-[0.875rem] leading-[26px]">{{ product.vendor }}</p>
+    <p class="font-normal mb-3 text-3.5 leading-[26px]">{{ product.vendor }}</p>
       {% render 'product-card-variants', product: product %}
     <div class="py-5 flex justify-around">
-      <a href="{{ product.url }}" class="flex items-center justify-center font-bold text-[0.875rem] py-3 px-6 leading-[1.21] shadow-[0_2px_6px_0_#00000026] rounded-[100px] min-w-[135px] bg-btn-main hover:bg-[#75758A] hover:text-white active:scale-95 transition-all duration-300 ease-out">Детальніше</a>
+      {% render 'button',
+      text: "Детальніше",
+      url: product.url,
+      variant: "usual",
+      classes: "min-w-[135px]"
+       %}
       <form method="post" action="{{ routes.cart_add_url }}">
         <input
           type="hidden"
