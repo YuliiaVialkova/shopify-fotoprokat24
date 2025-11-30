@@ -1,10 +1,12 @@
 <section class="popular-products">
   <div class="container-middle">
     <h2 class="font-section-title mb-7">Популярні товари</h2>
-    {% for product in section.settings.products %}
-      {% render 'product-card'
-        , product: product %}
-    {% endfor %}
+    <div class="grid grid-cols-1 tablet-small:grid-cols-2 tablet-medium:grid-cols-3 justify-between gap-5">
+      {% for product in section.settings.products %}
+        {% render 'product-card'
+          , product: product %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 

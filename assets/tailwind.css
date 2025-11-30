@@ -1,3 +1,12 @@
+@theme {
+  /* breakpoints */
+  --breakpoint-phone-medium: 23.4375rem; /*375px*/
+  --breakpoint-phone-large: 25.75rem; /*412px*/
+  --breakpoint-tablet-small: 37.5rem; /*600px*/
+  --breakpoint-tablet-medium: 56rem; /*896px*/
+  --breakpoint-tablet-large: 71.875rem; /* 1150px */
+}
+
 @import "tailwindcss";
 
 @layer theme {
@@ -61,6 +70,11 @@
     --container-middle-width: calc(
       var(--container-middle) + (var(--padding-inline) * 2)
     );
+    /* breakpoints
+    --breakpoint-pnone-medium: 23.4375rem;
+    --breakpoint-pnone-large: 25.75rem;
+    --breakpoint-tablet-small: 37.5rem;
+    --breakpoint-tablet-medium: 48rem; */
   }
 }
 

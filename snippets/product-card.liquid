@@ -1,7 +1,9 @@
-<div class="product-card w-[333px] ">
-  <div class="relative border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
+<div class="product-card w-full">
+  <div class="relative h-full w-full border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
     {% render 'product-card-aside'
-      , product: product %}
+      , product: product
+      , aside_classes: "top-[6%] right-[6%]"
+    %}
     <a href="{{ product.url }}" class="product-card__link flex flex-col justify-center items-center">
       {% if product.featured_media %}
         <img
@@ -16,7 +18,7 @@
     <p class="font-normal mb-3 text-3.5 leading-[26px]">{{ product.vendor }}</p>
     {% render 'product-card-variants'
       , product: product %}
-    <div class="py-5 flex gap-5 justify-center">
+    <div class="py-5 flex gap-1 justify-evenly">
       {% render 'button'
         ,
  text: "Детальніше"

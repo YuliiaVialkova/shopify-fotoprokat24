@@ -3,7 +3,7 @@
     {% for variant in product.variants %}
       <button
         type="button"
-        class="product-card-variants__option flex-1 py-4 px-2 border-(--color-main-border) border-solid border-t border-b  border-r last:border-r-0 cursor-pointer hover:bg-(--color-bg-add) transition ease-in duration-200"
+        class="product-card-variants__option shrink grow py-4 px-1.5 border-(--color-main-border) border-solid border-t border-b  border-r last:border-r-0 cursor-pointer hover:bg-(--color-bg-add) transition ease-in duration-200"
         data-variant-id="{{ variant.id }}"
         data-variant-price="{{ variant.price | money_without_trailing_zeros }}">
         <p class="font-bold text-3.5 leading-[1.43] ">{{ variant.price | money_without_trailing_zeros }}</p>
