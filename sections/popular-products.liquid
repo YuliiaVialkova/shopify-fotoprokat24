@@ -1,7 +1,18 @@
 <section class="popular-products">
   <div class="container-middle">
     <h2 class="font-section-title mb-7">Популярні товари</h2>
-    <div class="grid grid-cols-1 tablet-small:grid-cols-2 tablet-medium:grid-cols-3 justify-between gap-5">
+    <div class="grid grid-cols-1 tablet-small:grid-cols-2 tablet-medium:grid-cols-3 justify-between gap-5 relative">
+      <button class="slider-prev hidden size-10 z-10 bg-(--color-bg-main) shadow-(--shadow-box-title) tablet-large:flex tablet-large:justify-center tablet-large:items-center tablet-large:absolute tablet-large:top-[110px] tablet-large:-left-5">
+        <svg class="text-(--color-main-text) w-2 h-3.5">
+           <use href="#icon-arrow"></use>
+        </svg>
+      </button>
+      <button class="slider-next hidden size-10 z-10 bg-(--color-bg-main) shadow-(--shadow-box-title) tablet-large:flex tablet-large:justify-center tablet-large:items-center tablet-large:absolute tablet-large:top-[110px] tablet-large:-right-5">
+        <svg class="text-(--color-main-text) w-2 h-3.5 rotate-180">
+           <use href="#icon-arrow"></use>
+        </svg>
+      </button>
+
       {% for product in section.settings.products %}
         {% render 'product-card'
           , product: product %}

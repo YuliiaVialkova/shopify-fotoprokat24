@@ -26,7 +26,7 @@
     --color-dark-accent: #4f9c2c;
 
     /* text-color */
-    --color-main-text: var(--color-light);
+    --color-main-text: var(--color-dark);
     --color-add-text: var(--color-sub-dark);
     --color-accent-text: var(--color-light-accent);
 
