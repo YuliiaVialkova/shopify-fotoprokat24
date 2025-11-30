@@ -1,5 +1,5 @@
 <div class="product-card w-full">
-  <div class="relative h-full w-full border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
+  <div class="relative h-full w-full flex flex-col justify-end border-(--color-main-border) border border-solid hover:border-(--color-accent-border) transition ease-in duration-300 text-center">
     {% render 'product-card-aside'
       , product: product
       , aside_classes: "top-[6%] right-[6%]"
@@ -18,7 +18,7 @@
     <p class="font-normal mb-3 text-3.5 leading-[26px]">{{ product.vendor }}</p>
     {% render 'product-card-variants'
       , product: product %}
-    <div class="py-5 flex gap-1 justify-evenly">
+    <div class="py-5 flex gap-1 items-end-safe justify-evenly">
       {% render 'button'
         ,
  text: "Детальніше"
