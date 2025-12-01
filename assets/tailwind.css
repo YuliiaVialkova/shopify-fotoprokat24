@@ -1,9 +1,9 @@
 @theme {
   /* breakpoints */
-  --breakpoint-phone-medium: 23.4375rem; /*375px*/
+
   --breakpoint-phone-large: 25.75rem; /*412px*/
   --breakpoint-tablet-small: 37.5rem; /*600px*/
-  --breakpoint-tablet-medium: 56rem; /*896px*/
+  --breakpoint-tablet-medium: 56.875rem; /*910px*/
   --breakpoint-tablet-large: 71.875rem; /* 1150px */
 }
 
