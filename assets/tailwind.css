@@ -99,4 +99,12 @@
     line-height: 1.11;
     text-align: center;
   }
+  /* Прибираємо полоску прокрутки */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
 }
