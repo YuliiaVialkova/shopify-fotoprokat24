@@ -1,8 +1,0 @@
-{
-  "sections": {
-    "header": {
-      "type": "header"
-    }
-  },
-  "order": ["header"]
-}
