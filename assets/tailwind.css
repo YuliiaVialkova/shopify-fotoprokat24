@@ -9,6 +9,39 @@
 
 @import "tailwindcss";
 
+@layer base {
+  @font-face {
+    font-family: "Montserrat";
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    src: url('{{ "Montserrat-800.woff2" | asset_url }}') format("woff2");
+  }
+
+  @font-face {
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('{{ "Ubuntu-400.woff2" | asset_url }}') format("woff2");
+  }
+
+  @font-face {
+    font-family: "Ubuntu";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('{{ "Ubuntu-700.woff2" | asset_url }}') format("woff2");
+  }
+
+  body {
+    font-family: "Ubuntu", sans-serif;
+  }
+  .font-extra {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+  }
+}
 @layer theme {
   :root {
     --color-light: #ffffff;
@@ -70,11 +103,6 @@
     --container-middle-width: calc(
       var(--container-middle) + (var(--padding-inline) * 2)
     );
-    /* breakpoints
-    --breakpoint-pnone-medium: 23.4375rem;
-    --breakpoint-pnone-large: 25.75rem;
-    --breakpoint-tablet-small: 37.5rem;
-    --breakpoint-tablet-medium: 48rem; */
   }
 }
 
