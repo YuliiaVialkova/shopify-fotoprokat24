@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "comparison": {
+      "type": "comparison"
+    }
+  },
+  "order": ["comparison"]
+}
