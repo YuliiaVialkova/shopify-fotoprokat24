@@ -1,6 +1,35 @@
 <header class="header">
-  <h1>Header</h1>
-  {% render 'logo' %}
+  <h1 class="sr-only">Header</h1>
+  <div class="flex flex-row">
+    <div class="">
+      <a href="{{ pages['wishlist'].url }}">
+        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+            <use href="#icon-wishlist"></use>
+          </svg>
+      </a>
+      <a href="{{ pages['comparison'].url }}">
+        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+            <use href="#icon-compare"></use>
+          </svg>
+      </a>
+      <a href="{{ routes.cart_url }}">
+        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+            <use href="#icon-cart"></use>
+          </svg>
+      </a>
+    </div>
+    {% render 'logo' %}
+    <button>
+      <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+            <use href="#icon-search"></use>
+          </svg>
+    </button>
+    <button>
+      <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+            <use href="#icon-user"></use>
+          </svg>
+    </button>
+  </div>
 </header>
 
 {% schema %}

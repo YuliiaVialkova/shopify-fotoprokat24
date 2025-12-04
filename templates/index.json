@@ -10,7 +10,8 @@
 {
   "sections": {
     "header": {
-      "type": "header"
+      "type": "header",
+      "settings": {}
     },
     "main": {
       "type": "hero",
@@ -84,5 +85,10 @@
       }
     }
   },
-  "order": ["header", "main", "features_KyEhgM", "popular_products_zcpEVM"]
+  "order": [
+    "header",
+    "main",
+    "features_KyEhgM",
+    "popular_products_zcpEVM"
+  ]
 }
