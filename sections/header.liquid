@@ -1,10 +1,12 @@
+{%  assign wishlist_count = 0 %}
+{%  assign compare_count = 0 %}
 <header class="header">
   <div class="container-middle">
     <h1 class="sr-only">Header</h1>
     <div class="flex flex-row items-center ">
-      <div class="flex flex-row py-2.5 gap-2.5 items-center first-child:pl-0 last:child:pr-0">
-        <a href="{{ pages['wishlist'].url }}" class="p-1 relative">
-          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+      <div class="flex flex-row py-2.5 md:py-5 gap-5 items-center first-child:pl-0 last:child:pr-0">
+        <a href="{{ pages['wishlist'].url }}" class="group p-1 md:p-2 relative after:hidden md:after:block after:absolute after:w-11 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:opacity-0 md:group-hover:after:opacity-100 after:bg-linear-to-b after:from-(--color-bg-accent-from) after:to-(--color-bg-accent-to) after:transition-opacity after:duration-300 ">
+          <svg class="size-4 md:size-5 text-(--color-main-text) cursor-pointer group-hover:text-(--color-accent-text) transition-colors duration-300">
               <use href="#icon-wishlist"></use>
             </svg>
             {%  render 'icon-badge-default', count:wishlist_count, classes:'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
@@ -23,7 +25,7 @@
         </a>
       </div>
       <div class="logo mx-auto p-1">{% render 'logo'%}</div>
-      <div class="flex flex-row py-2.5 gap-2.5 items-center">
+      <div class="flex flex-row py-2.5 gap-5 items-center">
         <button class="p-1">
           <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
                 <use href="#icon-search"></use>
