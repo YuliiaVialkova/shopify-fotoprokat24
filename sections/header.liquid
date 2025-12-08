@@ -1,34 +1,46 @@
 <header class="header">
-  <h1 class="sr-only">Header</h1>
-  <div class="flex flex-row">
-    <div class="">
-      <a href="{{ pages['wishlist'].url }}">
-        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
-            <use href="#icon-wishlist"></use>
+  <div class="container-middle">
+    <h1 class="sr-only">Header</h1>
+    <div class="flex flex-row items-center ">
+      <div class="flex flex-row py-2.5 gap-2.5 items-center first-child:pl-0 last:child:pr-0">
+        <a href="{{ pages['wishlist'].url }}" class="p-1">
+          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+              <use href="#icon-wishlist"></use>
+            </svg>
+        </a>
+        <a href="{{ pages['comparison'].url }}" class="p-1">
+          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+              <use href="#icon-compare"></use>
+            </svg>
+        </a>
+        <a href="{{ routes.cart_url }}" class="p-1 relative">
+          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+              <use href="#icon-cart"></use>
           </svg>
-      </a>
-      <a href="{{ pages['comparison'].url }}">
-        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
-            <use href="#icon-compare"></use>
-          </svg>
-      </a>
-      <a href="{{ routes.cart_url }}">
-        <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
-            <use href="#icon-cart"></use>
-          </svg>
-      </a>
+            {% render 'icon-badge-cart', count:cart.item_count, classes: 'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
+        </a>
+      </div>
+      <div class="logo mx-auto p-1">{% render 'logo'%}</div>
+      <div class="flex flex-row py-2.5 gap-2.5 items-center">
+        <button class="p-1">
+          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+                <use href="#icon-search"></use>
+              </svg>
+        </button>
+        <button class="p-1">
+          <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
+                <use href="#icon-user"></use>
+              </svg>
+        </button>
+        <nav class="leading-none text-[0rem] p-1">
+          <button class="burger-menu w-4 h-3.5 relative cursor-pointer transition ease-in duration-300">
+            <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px]  hover:text-(--color-accent-text)"></span>
+            <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  hover:text-(--color-accent-text)"></span>
+            <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  hover:text-(--color-accent-text)"></span>
+          </button>
+        </nav>
+      </div>
     </div>
-    {% render 'logo' %}
-    <button>
-      <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
-            <use href="#icon-search"></use>
-          </svg>
-    </button>
-    <button>
-      <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
-            <use href="#icon-user"></use>
-          </svg>
-    </button>
   </div>
 </header>
 
