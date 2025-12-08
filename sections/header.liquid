@@ -3,15 +3,17 @@
     <h1 class="sr-only">Header</h1>
     <div class="flex flex-row items-center ">
       <div class="flex flex-row py-2.5 gap-2.5 items-center first-child:pl-0 last:child:pr-0">
-        <a href="{{ pages['wishlist'].url }}" class="p-1">
+        <a href="{{ pages['wishlist'].url }}" class="p-1 relative">
           <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
               <use href="#icon-wishlist"></use>
             </svg>
+            {%  render 'icon-badge-default', count:wishlist_count, classes:'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
         </a>
-        <a href="{{ pages['comparison'].url }}" class="p-1">
+        <a href="{{ pages['comparison'].url }}" class="p-1 relative">
           <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">
               <use href="#icon-compare"></use>
             </svg>
+            {%  render 'icon-badge-default', count:compare_count, classes:'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
         </a>
         <a href="{{ routes.cart_url }}" class="p-1 relative">
           <svg class="size-4 text-(--color-main-text) cursor-pointer  hover:text-(--color-accent-text) transition ease-in duration-300">

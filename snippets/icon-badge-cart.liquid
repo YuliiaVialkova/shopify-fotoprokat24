@@ -1,21 +1,21 @@
 {%  comment  %} 
-                            count
-                            classes: additional classes
+                                count
+                                classes: additional classes
 {% endcomment %}
 {% assign value = count | default: 0 %}
 
 {% comment  %} 
-                    mobile badge
-                    if count > 0 => green dot
-                    if count = 0 => nothing 
+                        mobile badge
+                        if count > 0 => green dot
+                        if count = 0 => nothing 
 {% endcomment %}
-<span class="icon-badge md:hidden size-1.5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) {{ classes }}"></span>
+<span class="md:hidden size-1.5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) {{ classes }}"></span>
 
 {% comment  %} 
-                    desktop badge
-                    if count > 0 => green dot with number
-                    if count = 0 => green dot
+                        desktop badge
+                        if count > 0 => green dot with white number
+                        if count = 0 => green dot
 {% endcomment %}
-<span class="icon-badge hidden size-5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) text-(--color-text-accent-btn) md:flex md:justify-center md:items-center  md:text-[0.75rem] md:leading-5 {{ classes }}">
+<span class="hidden size-5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) text-(--color-text-accent-btn) md:flex md:justify-center md:items-center  md:text-[0.75rem] md:leading-5 {{ classes }}">
   {{ value }}
 </span>
