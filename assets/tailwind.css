@@ -147,4 +147,7 @@
   .svg-hover {
     @apply cursor-pointer group-hover:text-(--color-accent-text) transition-colors duration-300;
   }
+  .badge-position {
+    @apply absolute top-0.5 -right-0.5 md:-top-3.5 md:-right-3;
+  }
 }
