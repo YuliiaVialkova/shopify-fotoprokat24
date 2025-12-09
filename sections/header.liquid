@@ -4,7 +4,7 @@
   <div class="container-middle">
     <h1 class="sr-only">Header</h1>
     <div class="flex flex-row items-center ">
-      <div class="flex flex-row py-2.5 md:py-5 gap-5 items-center first-child:pl-0 last:child:pr-0">
+      <div class="flex flex-row py-2.5 md:py-5 gap-3 md:gap-3.5 items-center first-child:pl-0 last:child:pr-0">
         <a href="{{ pages['wishlist'].url }}" class="group p-1 md:p-2 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-wishlist"></use>
@@ -12,35 +12,35 @@
             {%  render 'icon-badge-default', count:wishlist_count, classes:'badge-position' %}
         </a>
         <a href="{{ pages['comparison'].url }}" class="group p-1 md:p-2 icon-underline-hover">
-          <svg class="size-4 text-(--color-main-text) svg-hover">
+          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-compare"></use>
             </svg>
-            {%  render 'icon-badge-default', count:compare_count, classes:'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
+            {%  render 'icon-badge-default', count:compare_count, classes:'badge-position' %}
         </a>
         <a href="{{ routes.cart_url }}" class="group p-1 md:p-2 icon-underline-hover">
-          <svg class="size-4 text-(--color-main-text) svg-hover">
+          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-cart"></use>
           </svg>
-            {% render 'icon-badge-cart', count:cart.item_count, classes: 'absolute -top-0.5 -right-0.5 md:-top-2.5 md:-right-2' %}
+            {% render 'icon-badge-cart', count:cart.item_count, classes: 'badge-position' %}
         </a>
       </div>
       <div class="logo mx-auto p-1">{% render 'logo'%}</div>
-      <div class="flex flex-row py-2.5 gap-5 items-center">
+      <div class="flex flex-row py-2.5 gap-3 md:gap-3.5 last:child:pr-0 items-center">
         <button class="group p-1 md:p-2 icon-underline-hover">
-          <svg class="size-4 text-(--color-main-text) svg-hover">
+          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
                 <use href="#icon-search"></use>
               </svg>
         </button>
         <button class="group p-1 md:p-2 icon-underline-hover">
-          <svg class="size-4 text-(--color-main-text) svg-hover">
+          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
                 <use href="#icon-user"></use>
               </svg>
         </button>
-        <nav class="leading-none text-[0rem] p-1 md:p-2">
-          <button class="burger-menu w-4 h-3.5 relative cursor-pointer transition ease-in duration-300">
-            <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px]  hover:text-(--color-accent-text)"></span>
-            <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  hover:text-(--color-accent-text)"></span>
-            <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  hover:text-(--color-accent-text)"></span>
+        <nav class="leading-none text-[0rem] ">
+          <button class="burger-menu group p-1 md:p-2 w-4 h-3.5 icon-underline-hover">
+            <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] group-hover:bg-(--color-light-accent)"></span>
+            <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
+            <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
           </button>
         </nav>
       </div>

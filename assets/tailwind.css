@@ -135,7 +135,7 @@
     scrollbar-width: none; /* Firefox */
   }
   .icon-underline-hover {
-    @apply relative
+    @apply relative cursor-pointer
       after:hidden md:after:block
       after:absolute after:w-11 after:h-0.5
       after:-bottom-4
@@ -148,6 +148,6 @@
     @apply cursor-pointer group-hover:text-(--color-accent-text) transition-colors duration-300;
   }
   .badge-position {
-    @apply absolute top-0.5 -right-0.5 md:-top-3.5 md:-right-3;
+    @apply absolute top-0 -right-1 md:-top-1.5 md:-right-1;
   }
 }
