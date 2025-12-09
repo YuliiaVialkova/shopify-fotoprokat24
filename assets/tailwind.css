@@ -111,6 +111,11 @@
     margin: 0 auto;
     padding-inline: var(--padding-inline);
   }
+  .container-large {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding-inline: var(--padding-inline);
+  }
   .hero-container {
     max-width: var(--container-middle-width);
     margin: 0 auto;

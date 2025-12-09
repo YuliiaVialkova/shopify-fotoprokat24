@@ -1,49 +1,50 @@
 {%  assign wishlist_count = 0 %}
 {%  assign compare_count = 0 %}
 <header class="header">
-  <div class="container-middle">
+  <div class="container-large">
     <h1 class="sr-only">Header</h1>
-    <div class="flex flex-row items-center ">
-      <div class="flex flex-row py-2.5 md:py-5 gap-3 md:gap-3.5 items-center first-child:pl-0 last:child:pr-0">
-        <a href="{{ pages['wishlist'].url }}" class="group p-1 md:p-2 icon-underline-hover">
+    <div class="flex flex-row items-center gap-3 md:gap-3.5">
+      <div class="tablet-large:basis-[clamp(0px,calc((100vw-1150px)/2),115px)]"></div>
+      <div class="flex flex-row py-2.5 md:py-5 gap-3 md:gap-3.5 items-center  md:order-3 ">
+        <a href="{{ pages['wishlist'].url }}" class="group p-1 first:pl-0 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-wishlist"></use>
             </svg>
             {%  render 'icon-badge-default', count:wishlist_count, classes:'badge-position' %}
         </a>
-        <a href="{{ pages['comparison'].url }}" class="group p-1 md:p-2 icon-underline-hover">
+        <a href="{{ pages['comparison'].url }}" class="group p-1 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-compare"></use>
             </svg>
             {%  render 'icon-badge-default', count:compare_count, classes:'badge-position' %}
         </a>
-        <a href="{{ routes.cart_url }}" class="group p-1 md:p-2 icon-underline-hover">
+        <a href="{{ routes.cart_url }}" class="group p-1 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
               <use href="#icon-cart"></use>
           </svg>
             {% render 'icon-badge-cart', count:cart.item_count, classes: 'badge-position' %}
         </a>
       </div>
-      <div class="logo mx-auto p-1">{% render 'logo'%}</div>
-      <div class="flex flex-row py-2.5 gap-3 md:gap-3.5 last:child:pr-0 items-center">
-        <button class="group p-1 md:p-2 icon-underline-hover">
+      <div class="logo mx-auto p-1 md:mr-auto md:ml-0 md:order-2 lg:order-1 lg:mr-0 tablet-large:-ml-3.5">{% render 'logo'%}</div>
+      <div class="flex flex-row py-2.5 gap-3 md:gap-3.5  items-center md:order-4">
+        <button class="group p-1 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
                 <use href="#icon-search"></use>
               </svg>
         </button>
-        <button class="group p-1 md:p-2 icon-underline-hover">
+        <button class="group p-1 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
                 <use href="#icon-user"></use>
               </svg>
         </button>
-        <nav class="leading-none text-[0rem] ">
-          <button class="burger-menu group p-1 md:p-2 w-4 h-3.5 icon-underline-hover">
+      </div>
+      <nav class="leading-none text-[0rem] shrink-0 p-1 md:p-2 md:order-1 lg:order-2 lg:mr-auto">
+          <button class="burger-menu group w-4 h-3.5 relative cursor-pointer">
             <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] group-hover:bg-(--color-light-accent)"></span>
             <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
             <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
           </button>
         </nav>
-      </div>
     </div>
   </div>
 </header>
