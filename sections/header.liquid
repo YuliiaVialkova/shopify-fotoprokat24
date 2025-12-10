@@ -38,13 +38,20 @@
               </svg>
         </button>
       </div>
-      <nav class="leading-none text-[0rem] shrink-0 p-1 md:p-2 md:order-1 lg:order-2 lg:mr-auto">
-          <button class="burger-menu group w-4 h-3.5 relative cursor-pointer">
-            <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] group-hover:bg-(--color-light-accent)"></span>
-            <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
-            <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
-          </button>
+
+      <div class="">
+        <nav class="main-menu hidden">
+          {% for link in linklists.main-menu.links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
         </nav>
+              <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem] shrink-0 p-1 md:p-2 md:order-1 lg:order-2 lg:mr-auto">
+                <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] group-hover:bg-(--color-light-accent)"></span>
+                <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
+                <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  group-hover:bg-(--color-light-accent)"></span>
+              </button>
+      </div>
+      
     </div>
   </div>
 </header>
