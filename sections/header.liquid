@@ -39,16 +39,20 @@
         </button>
       </div>
 
-      <div class="header-menu shrink-0 p-1 md:p-2">
-        <nav class="main-menu hidden">
+      <div class="header-menu relative shrink-0 p-1 md:p-2 leading-none text-[0rem]  md:order-1 lg:order-2 lg:mr-auto">
+        <nav class="main-menu  fixed w-screen overflow-auto h-screen bg-(--color-bg-main) z-99 text-[1rem] color-(--color-main-text)  max-md:-right-full max-md:group-[.open-menu]:right-0 top-11 transition-all duration-200 ease-in flex flex-col 
+
+      md:absolute md:w-auto md:h-auto md:top-0 md:left-0 md:right-auto  md:opacity-0 md:pointer-events-none md:translate-y-0 md:group-[.open-menu]:opacity-100 md:group-[.open-menu]:translate-y-11 md:group-[.open-menu]:pointer-events-auto
+        
+        lg:flex-row">
           {% for link in linklists.main-menu.links %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <a href="{{ link.url }}" class="block p-4 text-4 color-(--color-main-text)">{{ link.title }}</a>
           {% endfor %}
         </nav>
-              <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem]   md:order-1 lg:order-2 lg:mr-auto">
-                <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] group-hover:bg-(--color-light-accent) group-[.open]:rotate-45 group-[.open]:translate-y-[7px]"></span>
-                <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent) group-[.open]:opacity-0"></span>
-                <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  group-hover:bg-(--color-light-accent) group-[.open]:-rotate-45 group-[.open]:-translate-y-1.5"></span>
+              <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem] md:">
+                <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] max-md:group-hover:bg-(--color-light-accent) max-md:group-[.open]:rotate-45 max-md:group-[.open]:translate-y-[7px]"></span>
+                <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent) max-md:group-[.open]:opacity-0"></span>
+                <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  max-md:group-hover:bg-(--color-light-accent) max-md:group-[.open]:-rotate-45 max-md:group-[.open]:-translate-y-1.5"></span>
               </button>
       </div>
       
@@ -61,8 +65,8 @@
     const burger = document.querySelector('.burger-menu');
 
     burger.addEventListener('click', ()=> {
-      console.log('toggle open')
-      burger.classList.toggle('open')
+      burger.classList.toggle('open');
+      document.documentElement.classList.toggle('open-menu')
     })
   })
 </script>

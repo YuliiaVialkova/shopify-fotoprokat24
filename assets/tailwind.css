@@ -15,7 +15,7 @@
     font-weight: 800;
     font-style: normal;
     font-display: swap;
-    src: url('{{ "Montserrat-800.woff2" | asset_url }}') format("woff2");
+    src: url('{{ "montserrat-800.woff2" | asset_url }}') format("woff2");
   }
 
   @font-face {
@@ -23,7 +23,7 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('{{ "Ubuntu-400.woff2" | asset_url }}') format("woff2");
+    src: url('{{ "ubuntu-400.woff2" | asset_url }}') format("woff2");
   }
 
   @font-face {
@@ -31,7 +31,7 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url('{{ "Ubuntu-700.woff2" | asset_url }}') format("woff2");
+    src: url('{{ "ubuntu-700.woff2" | asset_url }}') format("woff2");
   }
 
   body {
