@@ -25,7 +25,7 @@
             {% render 'icon-badge-cart', count:cart.item_count, classes: 'badge-position' %}
         </a>
       </div>
-      <div class="logo mx-auto p-1 md:mr-auto md:ml-0 md:order-2 lg:order-1 lg:mr-0 tablet-large:-ml-3.5">{% render 'logo'%}</div>
+      <div class="logo mx-auto p-1 md:mr-auto md:ml-0 md:order-2 lg:order-1 lg:mr-14 tablet-large:-ml-3.5 xl:mr-24">{% render 'logo'%}</div>
       <div class="flex flex-row py-2.5 gap-3 md:gap-3.5  items-center md:order-4">
         <button class="group p-1 md:p-2 shrink-0 icon-underline-hover">
           <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
@@ -44,12 +44,12 @@
 
       md:absolute md:w-auto md:h-auto md:top-0 md:left-0 md:right-auto  md:opacity-0 md:pointer-events-none md:translate-y-0 md:group-[.open-menu]:opacity-100 md:group-[.open-menu]:translate-y-11 md:group-[.open-menu]:pointer-events-auto
         
-        lg:flex-row">
+      lg:opacity-100 lg:relative  lg:flex-row lg:pointer-events-auto">
           {% for link in linklists.main-menu.links %}
-            <a href="{{ link.url }}" class="block p-4 text-4 color-(--color-main-text)">{{ link.title }}</a>
+            <a href="{{ link.url }}" class="block uppercase p-4 lg:p-3 text-4 lg:text-3.5 text-(--color-main-text) hover:text-(--color-accent-text) transition duration-200 ease-in">{{ link.title }}</a>
           {% endfor %}
         </nav>
-              <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem] md:">
+              <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem] lg:hidden">
                 <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] max-md:group-hover:bg-(--color-light-accent) max-md:group-[.open]:rotate-45 max-md:group-[.open]:translate-y-[7px]"></span>
                 <span class="block absolute w-full h-px bg-(--color-main-text) top-1/2 -translate-y-1/2 rounded-[10px]  group-hover:bg-(--color-light-accent) max-md:group-[.open]:opacity-0"></span>
                 <span class="block absolute w-full h-px bg-(--color-main-text) bottom-0 rounded-[10px]  max-md:group-hover:bg-(--color-light-accent) max-md:group-[.open]:-rotate-45 max-md:group-[.open]:-translate-y-1.5"></span>
