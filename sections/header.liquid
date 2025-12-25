@@ -5,21 +5,21 @@
     <h1 class="sr-only">Header</h1>
     <div class="flex flex-row items-center gap-3 md:gap-3.5">
       <div class="tablet-large:basis-[clamp(0px,calc((100vw-1150px)/2),115px)]"></div>
-      <div class="flex flex-row py-2.5 md:py-5 gap-3 md:gap-3.5 items-center  md:order-3 ">
-        <a href="{{ pages['wishlist'].url }}" class="group p-1 first:pl-0 md:p-2 shrink-0 icon-underline-hover">
-          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
-              <use href="#icon-wishlist"></use>
-            </svg>
+      <div class="flex flex-row py-2.5 md:py-5 gap-3 -ml-3 md:ml-0 md:gap-3.5 items-center  md:order-3 ">
+        <a href="{{ pages['wishlist'].url }}" class="p-1 first:pl-0 md:first:pl-2 md:p-2 shrink-0 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline icon-underline-hover">
+          <svg class="size-4 md:size-5 text-inherit svg-hover">
+            <use href="#icon-wishlist"></use>
+          </svg>
             {%  render 'icon-badge-default', count:wishlist_count, classes:'badge-position' %}
         </a>
-        <a href="{{ pages['comparison'].url }}" class="group p-1 md:p-2 shrink-0 icon-underline-hover">
-          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
-              <use href="#icon-compare"></use>
-            </svg>
+        <a href="{{ pages['comparison'].url }}" class="group p-1 md:p-2 shrink-0 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline icon-underline-hover">
+          <svg class="size-4 md:size-5 text-inherit svg-hover">
+            <use href="#icon-compare"></use>
+          </svg>
             {%  render 'icon-badge-default', count:compare_count, classes:'badge-position' %}
         </a>
-        <a href="{{ routes.cart_url }}" class="group p-1 md:p-2 shrink-0 icon-underline-hover">
-          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
+        <a href="{{ routes.cart_url }}" class="group p-1 md:p-2 shrink-0 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline icon-underline-hover">
+          <svg class="size-4 md:size-5 text-inherit svg-hover">
               <use href="#icon-cart"></use>
           </svg>
             {% render 'icon-badge-cart', count:cart.item_count, classes: 'badge-position' %}
@@ -27,26 +27,26 @@
       </div>
       <div class="logo mx-auto p-1 md:mr-auto md:ml-0 md:order-2 lg:order-1 lg:mr-14 tablet-large:-ml-3.5 xl:mr-24">{% render 'logo'%}</div>
       <div class="flex flex-row py-2.5 gap-3 md:gap-3.5  items-center md:order-4">
-        <button class="group p-1 md:p-2 shrink-0 icon-underline-hover">
-          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
-                <use href="#icon-search"></use>
-              </svg>
+        <button class="group p-1 md:p-2 shrink-0 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline icon-underline-hover">
+          <svg class="size-4 md:size-5 text-inherit svg-hover">
+            <use href="#icon-search"></use>
+          </svg>
         </button>
-        <button class="group p-1 md:p-2 shrink-0 icon-underline-hover">
-          <svg class="size-4 md:size-5 text-(--color-main-text) svg-hover">
-                <use href="#icon-user"></use>
-              </svg>
+        <button class="group p-1 md:p-2 shrink-0 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline icon-underline-hover">
+          <svg class="size-4 md:size-5 text-inherit svg-hover">
+            <use href="#icon-user"></use>
+          </svg>
         </button>
       </div>
 
-      <div class="header-menu relative shrink-0 p-1 md:p-2 leading-none text-[0rem]  md:order-1 lg:order-2 lg:mr-auto">
+      <div class="header-menu relative shrink-0 p-1 md:p-2 lg:p-0 leading-none text-[0rem]  md:order-1 lg:order-2 lg:mr-auto">
         <nav class="main-menu  fixed w-screen overflow-auto h-screen bg-(--color-bg-main) z-99 text-[1rem] color-(--color-main-text)  max-md:-right-full max-md:group-[.open-menu]:right-0 top-11 transition-all duration-200 ease-in flex flex-col 
 
       md:absolute md:w-auto md:h-auto md:top-0 md:left-0 md:right-auto  md:opacity-0 md:pointer-events-none md:translate-y-0 md:group-[.open-menu]:opacity-100 md:group-[.open-menu]:translate-y-11 md:group-[.open-menu]:pointer-events-auto
         
-      lg:opacity-100 lg:relative  lg:flex-row lg:pointer-events-auto">
+      lg:opacity-100 lg:relative  lg:flex-row lg:pointer-events-auto lg:overflow-visible">
           {% for link in linklists.main-menu.links %}
-            <a href="{{ link.url }}" class="block uppercase p-4 lg:p-3 text-4 lg:text-3.5 text-(--color-main-text) hover:text-(--color-accent-text) transition duration-200 ease-in">{{ link.title }}</a>
+            <a href="{{ link.url }}" class="block uppercase p-4 lg:p-3 text-4 lg:text-3.5 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline menu-underline-hover transition duration-200 ease-in">{{ link.title }}</a>
           {% endfor %}
         </nav>
               <button class="burger-menu group w-4 h-3.5 relative cursor-pointer leading-none text-[0rem] lg:hidden">
