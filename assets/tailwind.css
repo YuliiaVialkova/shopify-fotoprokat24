@@ -141,16 +141,20 @@
   }
   .icon-underline-hover {
     @apply relative cursor-pointer
-      after:hidden md:after:block
+      
       after:absolute after:w-11 after:h-0.5
       after:-bottom-4
       after:left-1/2 after:-translate-x-1/2
-      after:opacity-0 md:hover:after:opacity-100
+      after:opacity-0 
       after:bg-linear-to-b after:from-(--color-bg-accent-from) after:to-(--color-bg-accent-to)
-      after:transition-opacity after:duration-300;
+      after:transition-opacity after:duration-300
+
+      
+      md:after:opacity-0 
+      md:group-hover:after:opacity-100;
   }
   .svg-hover {
-    @apply cursor-pointer group-hover:text-(--color-accent-text) transition-colors duration-300;
+    @apply cursor-pointer transition-colors duration-300;
   }
   .badge-position {
     @apply absolute top-0 -right-1 md:-top-1.5 md:-right-1;
