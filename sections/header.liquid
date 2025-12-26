@@ -45,9 +45,23 @@
       md:absolute md:w-auto md:h-auto md:top-0 md:left-0 md:right-auto  md:opacity-0 md:pointer-events-none md:translate-y-0 md:in-[.open-menu]:opacity-100 md:in-[.open-menu]:translate-y-11 md:in-[.open-menu]:pointer-events-auto md:overflow-visible
         
       lg:opacity-100 lg:relative  lg:flex-row lg:pointer-events-auto lg:overflow-visible">
-          {% for link in linklists.main-menu.links %}
-            <a href="{{ link.url }}" class="block uppercase p-4 lg:p-3 text-4 lg:text-3.5 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline menu-underline-hover transition duration-200 ease-in">{{ link.title }}</a>
-          {% endfor %}
+          <ul class="flex flex-col ">
+            {% for link in linklists.main-menu-1.links %}
+              <li class="relative group">
+                <a href="{{ link.url }}" class="block uppercase p-4 lg:p-3 text-4 leading-[18px] lg:text-3.5 text-(--color-main-text) hover:text-(--color-accent-text) header-items-underline menu-underline-hover transition duration-200 ease-in">{{ link.title }}
+                </a>
+                {% if link.links != blank %}
+                  <ul>
+                    {% for childlink in link.links %}
+                      <li>
+                        <a href="{{ childlink.url }}" class="block px-7 py-4 leading-4 text-3.5 hover:text-(--color-accent-text) hover:bg-(--color-bg-add)">{{ childlink.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         </nav>
               <button class="burger-menu cursor-pointer w-4 h-3.5 relative leading-none text-[0rem] lg:hidden">
                 <span class="block absolute w-full h-px bg-(--color-main-text) top-0 rounded-[10px] transition-colors duration-300 md:group-hover:bg-(--color-light-accent) max-md:in-[.open]:rotate-45 max-md:in-[.open]:translate-y-[7px]"></span>
@@ -65,8 +79,17 @@
     const burger = document.querySelector('.burger-menu');
 
     burger.addEventListener('click', ()=> {
-      burger.classList.toggle('open');
-      document.documentElement.classList.toggle('open-menu')
+      const isOpen = burger.classList.toggle('open');
+      document.documentElement.classList.toggle('open-menu');
+      // Додатковий захист від скролу на мобільних
+if(isOpen){
+  document.body.style.overflow = 'hidden';
+  document.body.style.touchAction = 'none';
+} else{
+  document.body.style.overflow = '';
+  document.body.style.touchAction = '';
+}
+
     })
   })
 </script>

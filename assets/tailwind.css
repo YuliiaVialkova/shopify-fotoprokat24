@@ -131,6 +131,7 @@
     line-height: 1.11;
     text-align: center;
   }
+
   /* Прибираємо полоску прокрутки */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -138,6 +139,11 @@
   .scrollbar-hide {
     -ms-overflow-style: none; /* IE 10+ */
     scrollbar-width: none; /* Firefox */
+  }
+
+  /* Блокуємо скрол сторінки, коли меню відкрите */
+  .open-menu body {
+    overflow: hidden;
   }
   .header-items-underline {
     @apply relative cursor-pointer
