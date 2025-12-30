@@ -1,3 +1,37 @@
+function updateHeaderCounts() {
+  ["wishlist", "compare"].forEach((type) => {
+    const items = JSON.parse(localStorage.getItem("shopify_" + type)) || "[]";
+    const count = items.length;
+
+    const container = document.querySelector(`.js-${type}-container`);
+
+    if (!container) return;
+
+    const mobileBadge = container.querySelector(".js-badge-mobile");
+    const desktopBadge = container.querySelector(".js-badge-desktop");
+
+    if (count > 0) {
+      if (mobileBadge) {
+        mobileBadge.classList.remove("hidden");
+      }
+      if (desktopBadge) {
+        desktopBadge.classList.remove("md:hidden");
+        desktopBadge.classList.add("md:flex");
+        desktopBadge.textContent = count;
+      }
+    } else {
+      if (mobileBadge) {
+        mobileBadge.classList.add("hidden");
+      }
+      if (desktopBadge) {
+        desktopBadge.classList.add("md:hidden");
+        desktopBadge.classList.remove("md:flex");
+        desktopBadge.textContent = "";
+      }
+    }
+  });
+}
+
 function toggleStorageItem(type, id, button) {
   const productId = String(id);
   let items = JSON.parse(localStorage.getItem("shopify_" + type) || "[]");
@@ -10,6 +44,7 @@ function toggleStorageItem(type, id, button) {
     button.classList.add("is-active");
   }
   localStorage.setItem("shopify_" + type, JSON.stringify(items));
+  updateHeaderCounts();
 }
 
 function initButtonStates() {
@@ -25,6 +60,7 @@ function initButtonStates() {
       });
     });
   });
+  updateHeaderCounts();
 }
 
 document.addEventListener("click", (event) => {

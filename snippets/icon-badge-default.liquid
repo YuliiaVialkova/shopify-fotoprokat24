@@ -1,25 +1,24 @@
 {%  comment  %} 
-                                                count
-                                                classes: additional classes
+                                                        count
+                                                        classes: additional classes
 {% endcomment %}
 {% assign value = count | default: 0 %}
 
 {% comment  %} 
-                                        mobile badge
-                                        if count > 0 => green dot
-                                        if count = 0 => nothing 
+                                                mobile badge
+                                                if count > 0 => green dot
+                                                if count = 0 => nothing 
 {% endcomment %}
-{% if value > 0 %}
-  <span class="md:hidden size-1.5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) {{ classes }}"></span>
-{% endif %}
+
+<span class="js-badge-mobile md:hidden size-1.5 rounded-full bg-linear-to-b from-(--color-bg-accent-from) to-(--color-bg-accent-to) {{ classes }} {% if value == 0 %} hidden {% endif %}"></span>
+
 
 {% comment  %} 
-                                        desktop badge
-                                        if count > 0 => grey dot with black number
-                                        if count = 0 => nothing
+                                                desktop badge
+                                                if count > 0 => grey dot with black number
+                                                if count = 0 => nothing
 {% endcomment %}
-{% if value > 0 %}
-  <span class="hidden md:size-5 rounded-full bg-(--color-add-light)  text-(--color-main-text) md:flex md:justify-center md:items-center  md:text-[0.75rem] md:leading-5 {{ classes }}">
-    {{ value }}
-  </span>
-{% endif %}
+
+<span class="js-badge-desktop hidden md:size-5 rounded-full bg-(--color-add-light) text-(--color-main-text)  md:flex md:justify-center  md:items-center  md:text-[0.75rem] md:leading-5 {{ classes }} {% if value == 0 %} md:hidden {% endif %}">
+  {{ value }}
+</span>
