@@ -10,22 +10,34 @@ function toggleStorageItem(type, id, button) {
     button.classList.add("is-active");
   }
   localStorage.setItem("shopify_" + type, JSON.stringify(items));
-  console.log(`updated ${type}:`, items);
 }
 
-function initWishlistCompare() {
+function initButtonStates() {
   ["wishlist", "compare"].forEach((type) => {
     const items = JSON.parse(localStorage.getItem("shopify_" + type) || "[]");
 
     items.forEach((id) => {
-      const buttons = document.querySelectorAll(`[data-product-id="${id}"]`);
+      const buttons = document.querySelectorAll(
+        `.product-action-btn[data-product-id="${id}"][data-action="${type}"]`
+      );
       buttons.forEach((btn) => {
-        if (btn.getAttribute("onclick").includes(type)) {
-          btn.classList.add("is-active");
-        }
+        btn.classList.add("is-active");
       });
     });
   });
 }
 
-document.addEventListener("DOMContentLoaded", initWishlistCompare);
+document.addEventListener("click", (event) => {
+  const button = event.target.closest(".product-action-btn");
+
+  if (!button) return;
+
+  const type = button.dataset.action;
+  const id = button.dataset.productId;
+
+  if (type && id) {
+    toggleStorageItem(type, id, button);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", initButtonStates);

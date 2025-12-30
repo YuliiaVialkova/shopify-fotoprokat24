@@ -1,5 +1,5 @@
 <div class="product-card-aside flex flex-col flex-nowrap gap-3 absolute {{ aside_classes }}">
-      <button type="button" data-product-id="{{ product.id }}" class="compare-btn group/compare cursor-pointer flex items-center justify-center" onclick="toggleStorageItem('compare', '{{ product.id }}', this)">
+      <button type="button" data-product-id="{{ product.id }}" data-action="compare" class="product-action-btn compare-btn group/compare cursor-pointer flex items-center justify-center" >
         <div class="relative size-4.75">
     <svg class="absolute size-4.75 text-(--color-main-text) transition-opacity duration-200 
                group-hover/compare:text-(--color-accent-text) 
@@ -13,7 +13,7 @@
     </svg>
   </div>
       </button>
-      <button type="button" data-product-id="{{ product.id }}" class="wishlist-btn group/wishlist cursor-pointer" onclick="toggleStorageItem('wishlist', '{{ product.id }}', this)">
+      <button type="button" data-product-id="{{ product.id }}" data-action="wishlist" class="product-action-btn wishlist-btn group/wishlist cursor-pointer" >
         <div class="relative size-6">
     <svg class="absolute inset-0 size-6 text-black transition-opacity duration-200 
                group-hover/wishlist:text-(--color-accent-text) in-[.is-active]:opacity-0 in-[.is-active]:pointer-events-none z-10">
